@@ -1,17 +1,17 @@
+import { Route, Routes } from "react-router-dom"
 
-import { useEffect } from "react"
-import {data} from "./data"
-import { uploadFlashcards } from "./utils/firebase/firebase.utils"
+import Navigation from "./routes/navigation/navigation.component"
 
 function App() {
-  useEffect(() => {
-    uploadFlashcards(data)
-  }, [])
+
+
 
   return (
-    <div className="App">
-    
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+
+      </Route>
+    </Routes>
   )
 }
 
