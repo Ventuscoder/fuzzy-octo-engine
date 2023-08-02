@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getFirestore, collection, writeBatch, doc } from 'firebase/firestore'
+import { getFirestore, collection, writeBatch, doc, getDocs, query } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: "AIzaSyB7qUzaHMmgQ8H07SRIs1nvW1V1N1qSS1w",
@@ -32,4 +32,12 @@ export async function uploadFlashcards(flashcards) {
     await batch.commit()
     console.log('done')
   }
+}
+
+export async function getFlashcards(subj) {
+  const collectionRef = collection(db, subj)
+  const q = query(collectionRef)
+  const querySnapshot = await getDocs(q)
+
+  return querySnapshot.docs.map(docSnapshot => console.log(docSnapshot.data()))
 }
