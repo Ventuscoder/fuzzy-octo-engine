@@ -18,7 +18,14 @@ export default function Home() {
 
     return (
         <div className="home">
-            <TypeAnimation sequence={typeSequence} wrapper="h2" preRenderFirstString repeat={Infinity} />
+            <div className="content-container w-100 px-4 py-5">
+                <div className="title-container">
+                    <TypeAnimation sequence={typeSequence} wrapper="h2" preRenderFirstString repeat={Infinity} />
+                </div>
+                <div className="nav-btn-group">
+                    <button className="btn btn-primary p-2 mt-4 lh-lg">Start studying now <i className="gg-arrow-top-right-r"></i></button>
+                </div>
+            </div>
         </div>
     )
 }
