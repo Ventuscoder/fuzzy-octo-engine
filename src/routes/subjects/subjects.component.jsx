@@ -7,7 +7,7 @@ const subjectList = [
 
 export default function Subjects() {
     return (
-        <div className="subjects">
+        <div className="subjects d-grid gap-3 px-3 px-sm-4 py-4">
             {subjectList.map(({name, color}, idx) => (
                 <SubjectCoverCard name={name} color={color} key={idx} />
             ))}

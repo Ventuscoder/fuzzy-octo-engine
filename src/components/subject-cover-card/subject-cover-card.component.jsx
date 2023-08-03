@@ -2,8 +2,8 @@
 
 export default function SubjectCoverCard({ name, color }) {
     return (
-        <div className="subject-cover-card" style={{backgroundColor: color}}>
+        <button className="subject-cover-card btn col-sm-4 py-2 fw-bold" style={{backgroundColor: color}}>
             {name}
-        </div>
+        </button>
     )
 }
