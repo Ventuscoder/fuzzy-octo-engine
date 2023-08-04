@@ -1,9 +1,18 @@
+import { useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { useDispatch } from "react-redux"
+
+import { fetchSubjectStart } from "../../store/flashcards/flashcard.action"
 
 export default function ChapterPreview() {
-    const { chapter } = useParams()
+    const { subject } = useParams()
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchSubjectStart(subject))
+    }, [])
 
     return (
-        <h1>{chapter}</h1>
+        <h1>{subject}</h1>
     )
 }

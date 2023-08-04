@@ -39,5 +39,5 @@ export async function getFlashcards(subj) {
   const q = query(collectionRef)
   const querySnapshot = await getDocs(q)
 
-  return querySnapshot.docs.map(docSnapshot => console.log(docSnapshot.data()))
+  return querySnapshot.docs.map(docSnapshot => docSnapshot.data())
 }

@@ -6,7 +6,7 @@ export default function Subjects() {
     return (
         <Routes>
             <Route index element={<SubjectPreview />} />
-            <Route path=":chapter" element={<ChapterPreview />} />
+            <Route path=":subject" element={<ChapterPreview />} />
         </Routes>
     )
 }
