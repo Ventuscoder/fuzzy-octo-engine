@@ -19,6 +19,7 @@ export async function uploadFlashcards(flashcards) {
   const subjects = Object.keys(flashcards)
 
   for (let i = 0; i < subjects.length; i++) {
+    ////// DONT FORGET NEW 'TITLE' THINGY
     const batch = writeBatch(db)
     const collectionRef = collection(db, subjects[i])
 
@@ -39,5 +40,15 @@ export async function getFlashcards(subj) {
   const q = query(collectionRef)
   const querySnapshot = await getDocs(q)
 
-  return querySnapshot.docs.map(docSnapshot => docSnapshot.data())
+  const subjectData = {}
+  querySnapshot.forEach(doc => {
+    const tempData = doc.data()
+    subjectData[tempData.title] = tempData.data
+  })
+  return subjectData
+}
+
+export function convertChapterToText(str) {
+  const title = str.replace('_', ' ')
+  return title
 }

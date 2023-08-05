@@ -19,7 +19,7 @@ export function flashcardsReducer(state = flashcardsInitialState, action = {}) {
                 ...state,
                 flashcards: {
                     ...state.flashcards,
-                    [payload.subject]: payload.subjectFlashcards[0].data
+                    [payload.subject]: payload.subjectFlashcards
                 },
                 isLoading: false
             }
